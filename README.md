@@ -1,8 +1,8 @@
-<h1 style="text-align: center">LQB2C商城系统</h1>
+<h1 style="text-align: center">QSHOP BBC商城系统</h1>
 
 
 #### 项目简介
-LQB2C基于当前流行技术组合的前后端分离商城系统： SpringBoot2+Jpa+MybatisPlus+SpringSecurity+jwt+redis+Vue的前后端分离的商城系统， 包含商城、拼团、砍价、商户管理、 秒杀、优惠券、积分、分销、会员等功能，更适合企业或个人二次开发；；
+QSHOP BBC基于当前流行技术组合的前后端分离商城系统： SpringBoot2+Jpa+MybatisPlus+SpringSecurity+jwt+redis+Vue的前后端分离的商城系统， 包含商城、拼团、砍价、商户管理、 秒杀、优惠券、积分、分销、会员等功能，更适合企业或个人二次开发；；
 
 **开发文档**  【[查看文档]( https://code.aliyun.com/lq_b2c/node_frontend_h5/wikis/develop_wikis )】 
 
@@ -98,7 +98,7 @@ LQB2C基于当前流行技术组合的前后端分离商城系统： SpringBoot2
 - 1.3.1版本手机端新增商户管理、后台新增统计
 - 1.3.2新增后台微信相关及其支付配置，新增自动回复配置
 - 1.3.3新增 后台微信图文发送功能，小程序配置，增加小程序授权等,修复一些bug等
-- LQB2C2.0版本发布，更新如下：
+- QSHOP BBC2.0版本发布，更新如下：
   - 1.1、新增积分签到
   - 1.2、新增会员等级、任务等功能，新增会员价格等
   - 1.3、修复Redisson linux系统启动报错问题
@@ -108,7 +108,7 @@ LQB2C基于当前流行技术组合的前后端分离商城系统： SpringBoot2
   - 1.7、会员后台新增余额调整
   - 1.8、修复新增配置数据有时候不成功问题等
 - 2.0.1个人中心新增账单流水
-- LQB2C2.0.2 发布更新如下：
+- QSHOP BBC2.0.2 发布更新如下：
    - 1.商品新增多图评价
    - 2.订单新增快递查询
 - 2.0.3版本，后台图标更新,后台模块重新拆分,物流快递单独管理,导出最新sql
