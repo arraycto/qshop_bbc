@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.StoreCollectMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, store_id, type, add_time, modify_time, deleted
+    </sql>
+
+    <select id="getStoreCollectById" resultType="co.lq.modules.shop.web.vo.StoreCollectQueryVo">
+        select <include refid="Base_Column_List"/> from store_collect where id = #{id}
+    </select>
+
+    <select id="getStoreCollectPageList" resultType="co.lq.modules.shop.web.vo.StoreCollectQueryVo">
+        select <include refid="Base_Column_List"/> from store_collect
+        <where>
+            1
+            <if test="param.deleted != null">
+                and `deleted`=#{param.deleted}
+            </if>
+            <if test="param.uid != null">
+                and `uid`=#{param.uid}
+            </if>
+        </where>
+    </select>
+
+    <select id="getStoreCollectByUidAndStoreIdAndType" resultType="co.lq.modules.shop.web.vo.StoreCollectQueryVo">
+        select <include refid="Base_Column_List"/> from store_collect where uid = #{uid} and store_id = #{storeId} and `type` = #{type} and deleted = 0
+    </select>
+
+</mapper>

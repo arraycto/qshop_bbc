@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.SellerUserMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        uid, username, account, password, pwd, real_name, birthday, card_id, mark, partner_id, nickname, avatar, phone, add_time, add_ip, last_time, last_ip, now_money, brokerage_price, integral, sign_num, status, level, spread_uid, spread_time, user_type, is_promoter, pay_count, spread_count, clean_time, addres, adminid, login_type
+    </sql>
+
+
+    <select id="getUserPageListByShopId" parameterType="co.lq.modules.shop.service.dto.UserQueryCriteria" resultType="co.lq.modules.shop.service.dto.UserDTO">
+        select uid, username, account, password, pwd, real_name, birthday, card_id, mark, partner_id, nickname, avatar, phone, u.add_time, add_ip, last_time, last_ip, now_money, brokerage_price, integral, sign_num, status, level, spread_uid, spread_time, user_type, is_promoter, pay_count, spread_count, clean_time, addres, adminid, login_type
+        from `user` as u
+        left join `member_level_store` as r on r.`user_id`=u.uid
+        where 1
+        <if test="param.storeId != null">
+            and r.`store_id`=#{param.storeId}
+        </if>
+        <if test="param.nickname != null">
+            and u.`nickname` like '%#{param.nickname}%'
+        </if>
+        <if test="param.nickname != null">
+            and u.`nickname` like '%#{param.phone}%'
+        </if>
+        <if test="param.isPromoter != null">
+            and u.`is_promoter`=#{param.isPromoter}
+        </if>
+        <if test="param.userType != null and param.userType != ''">
+            and u.`user_type`=#{param.userType}
+        </if>
+    </select>
+
+    <select id="getUsersByShopId" resultType="co.lq.modules.shop.service.dto.UserDTO">
+        select uid, username, account, password, pwd, real_name, birthday, card_id, mark, partner_id, nickname, avatar, phone, u.add_time, add_ip, last_time, last_ip, now_money, brokerage_price, integral, sign_num, status, level, spread_uid, spread_time, user_type, is_promoter, pay_count, spread_count, clean_time, addres, adminid, login_type
+        from `user` as u
+        left join `member_level_store` as r on r.`user_id`=u.uid
+        where 1
+        <if test="storeId != null">
+            and r.`store_id`=#{storeId}
+        </if>
+        <if test="nickname != null">
+            and u.`nickname` like '%#{nickname}%'
+        </if>
+        <if test="nickname != null">
+            and u.`nickname` like '%#{phone}%'
+        </if>
+        <if test="isPromoter != null">
+            and u.`is_promoter`=#{isPromoter}
+        </if>
+        <if test="userType != null">
+            and u.`user_type`=#{userType}
+        </if>
+    </select>
+
+    <update id="updateBrokeragePriceByUid">
+        update `user`
+        <set>
+            brokerage_price = brokerage_price + #{brokeragePrice}
+        </set>
+        where uid = #{uid}
+    </update>
+
+    <insert id="saveMemberLevelStore">
+        insert into `member_level_store`
+        (
+            `user_id`,
+            `level_id`,
+            `store_id`
+        )
+        values (
+            #{userId},
+            #{levelId},
+            #{storeId}
+        )
+    </insert>
+
+    <delete id="delteMemberLevelStoreByUserId">
+        delete from `member_level_store` where `user_id`=#{userId} and `store_id`=#{storeId}
+    </delete>
+
+</mapper>

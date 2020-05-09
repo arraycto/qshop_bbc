@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.StoreCouponUserMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, cid, uid, coupon_title, coupon_price, use_min_price, add_time, end_time, use_time, type, status, is_fail, store_id
+    </sql>
+
+    <select id="getStoreCouponUserById" resultType="co.lq.modules.shop.web.vo.StoreCouponUserQueryVo">
+        select <include refid="Base_Column_List"/> from store_coupon_user where id = #{id}
+    </select>
+
+    <select id="getStoreCouponUserPageList" resultType="co.lq.modules.shop.web.vo.StoreCouponUserQueryVo">
+        select <include refid="Base_Column_List"/> from store_coupon_user
+    </select>
+
+</mapper>

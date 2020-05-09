@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.user.mapper.UserSignMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, title, number, balance, add_time
+    </sql>
+
+    <select id="getUserSignById" resultType="co.lq.modules.user.web.vo.UserSignQueryVo">
+        select <include refid="Base_Column_List"/> from user_sign where id = #{id}
+    </select>
+
+    <select id="getUserSignPageList" resultType="co.lq.modules.user.web.vo.UserSignQueryVo">
+        select <include refid="Base_Column_List"/> from user_sign
+    </select>
+
+</mapper>

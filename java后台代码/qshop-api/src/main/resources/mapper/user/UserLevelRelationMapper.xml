@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.user.mapper.UserLevelRelationMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, level_id, grade, valid_time, is_forever, mer_id, status, mark, remind, is_del, add_time, discount
+    </sql>
+
+    <select id="getUserLevelById" resultType="co.lq.modules.user.web.vo.UserLevelRelationQueryVo">
+        select <include refid="Base_Column_List"/> from user_level_relation where id = #{id}
+    </select>
+
+    <select id="getUserLevelPageList" resultType="co.lq.modules.user.web.vo.UserLevelRelationQueryVo">
+        select <include refid="Base_Column_List"/> from user_level_relation
+    </select>
+
+</mapper>

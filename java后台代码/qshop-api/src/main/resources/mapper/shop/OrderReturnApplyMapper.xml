@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.OrderReturnApplyMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, oid, address_id, order_id, member_username, return_amount, return_name, return_phone, status, reason, description, proof_pics, handle_note, handle_man, receive_man, receive_time, receive_note, store_id, add_time, modify_time, deleted, order_amount, return_type, cart_info
+    </sql>
+
+    <select id="getOrderReturnApplyById" resultType="co.lq.modules.shop.web.vo.OrderReturnApplyQueryVo">
+        select <include refid="Base_Column_List"/> from order_return_apply where id = #{id}
+    </select>
+
+    <select id="getOrderReturnApplyPageList" resultType="co.lq.modules.shop.web.vo.OrderReturnApplyQueryVo">
+        select <include refid="Base_Column_List"/> from order_return_apply
+    </select>
+
+</mapper>

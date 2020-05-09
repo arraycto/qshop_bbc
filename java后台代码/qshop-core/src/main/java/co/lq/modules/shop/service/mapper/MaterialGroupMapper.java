@@ -1,0 +1,17 @@
+package co.lq.modules.shop.service.mapper;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.ReportingPolicy;
+
+import co.lq.base.BaseMapper;
+import co.lq.modules.shop.domain.MaterialGroup;
+import co.lq.modules.shop.service.dto.MaterialGroupDto;
+
+/**
+ * @author billy
+ * @date 2020-01-09
+ */
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
+public interface MaterialGroupMapper extends BaseMapper<MaterialGroupDto, MaterialGroup> {
+
+}

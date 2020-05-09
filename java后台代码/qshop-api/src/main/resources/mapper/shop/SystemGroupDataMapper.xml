@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.SystemGroupDataMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, group_name, value, add_time, sort, status
+    </sql>
+
+    <select id="getSystemGroupDataById" resultType="co.lq.modules.shop.web.vo.SystemGroupDataQueryVo">
+        select <include refid="Base_Column_List"/> from system_group_data where id = #{id}
+    </select>
+
+    <select id="getSystemGroupDataPageList" resultType="co.lq.modules.shop.web.vo.SystemGroupDataQueryVo">
+        select <include refid="Base_Column_List"/> from system_group_data
+    </select>
+
+</mapper>

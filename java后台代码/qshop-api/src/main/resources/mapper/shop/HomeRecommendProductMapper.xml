@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.HomeRecommendProductMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, product_id, product_name, recommend_status, sort, store_id, add_time, modify_time, deleted
+    </sql>
+
+    <select id="getHomeRecommendProductById" resultType="co.lq.modules.shop.web.vo.HomeRecommendProductQueryVo">
+        select <include refid="Base_Column_List"/> from home_recommend_product where id = #{id}
+    </select>
+
+    <select id="getHomeRecommendProductPageList" resultType="co.lq.modules.shop.web.vo.HomeRecommendProductQueryVo">
+        select <include refid="Base_Column_List"/> from home_recommend_product
+    </select>
+
+    <select id="getHomeRecommentProductList" resultType="co.lq.modules.shop.web.vo.HomeRecommendProductQueryVo">
+        select p.`product_name` as product_name, p.`price` as product_price, p.`ot_price` as original_prie, p.`sales`, p.`image`, h.`product_id`, h.`id`, h.recommend_status, h.sort, h.store_id, h.add_time, h.modify_time, h.deleted
+        from `home_recommend_product` as h
+        left join `store_product` as p on h.product_id=p.id
+        where h.deleted = 0 and p.is_show=1 and p.is_del=0
+        order by h.sort
+        limit #{start}, #{limit}
+    </select>
+
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.CompanyAddressMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, address_name, send_status, receive_status, name, phone, province, city, region, detail_address, store_id, add_time, modify_time, deleted
+    </sql>
+
+    <select id="getCompanyAddressById" resultType="co.lq.modules.shop.web.vo.CompanyAddressQueryVo">
+        select <include refid="Base_Column_List"/> from company_address where id = #{id}
+    </select>
+
+    <select id="getCompanyAddressPageList" resultType="co.lq.modules.shop.web.vo.CompanyAddressQueryVo">
+        select <include refid="Base_Column_List"/> from company_address
+    </select>
+
+</mapper>

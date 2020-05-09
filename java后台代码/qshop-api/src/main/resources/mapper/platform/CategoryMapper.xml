@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.CategoryMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, pid, cate_name, sort, pic, is_show, add_time, modify_time, deleted, commission_rate
+    </sql>
+
+    <select id="getStoreCategoryById" resultType="co.lq.modules.shop.web.vo.CategoryQueryVo">
+        select <include refid="Base_Column_List"/> from category where id = #{id}
+    </select>
+
+    <select id="getStoreCategoryPageList" resultType="co.lq.modules.shop.web.vo.CategoryQueryVo">
+        select <include refid="Base_Column_List"/> from category
+    </select>
+
+</mapper>

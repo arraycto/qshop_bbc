@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.HomeAdvertiseMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, type, pic, start_time, end_time, status, url, note, sort, store_id, add_time, modify_time, deleted, click_count, order_count
+    </sql>
+
+    <select id="getAdvertiseById" resultType="co.lq.modules.shop.web.vo.HomeAdvertiseQueryVo">
+        select <include refid="Base_Column_List"/> from `home_advertise` where id = #{id}
+    </select>
+
+    <select id="getHomeAdvertisePageList" resultType="co.lq.modules.shop.web.vo.HomeAdvertiseQueryVo">
+        select <include refid="Base_Column_List"/> from `home_advertise`
+        <where>
+            1
+            <if test="param.storeId">
+               AND `store_id`=#{param.storeId}
+            </if>
+        </where>
+    </select>
+
+    <select id="getHomeAdvertisePageLists" resultType="co.lq.modules.shop.web.vo.HomeAdvertiseQueryVo">
+        select <include refid="Base_Column_List"/> from `home_advertise`
+        <where>
+            1
+            <if test="param.storeId">
+                AND `store_id`=#{param.storeId}
+            </if>
+        </where>
+        limit #{start}, #{limit}
+    </select>
+
+</mapper>

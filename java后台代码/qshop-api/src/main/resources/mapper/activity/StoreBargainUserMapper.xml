@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.activity.mapper.StoreBargainUserMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, bargain_id, bargain_price_min, bargain_price, price, status, add_time, is_del
+    </sql>
+
+    <select id="getStoreBargainUserById" resultType="co.lq.modules.activity.web.vo.StoreBargainUserQueryVo">
+        select <include refid="Base_Column_List"/> from store_bargain_user where id = #{id}
+    </select>
+
+    <select id="getStoreBargainUserPageList" resultType="co.lq.modules.activity.web.vo.StoreBargainUserQueryVo">
+        select <include refid="Base_Column_List"/> from store_bargain_user
+    </select>
+
+</mapper>

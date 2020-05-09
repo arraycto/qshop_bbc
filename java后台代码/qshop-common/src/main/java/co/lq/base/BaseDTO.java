@@ -1,0 +1,27 @@
+package co.lq.base;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+
+import lombok.Getter;
+import lombok.Setter;
+
+/**
+ * @author billy
+ * @Date 2019年10月24日20:48:53
+ */
+@Getter
+@Setter
+public class BaseDTO implements Serializable {
+
+    private Boolean   isDelete;
+
+    private Timestamp createTime;
+
+    private Timestamp updateTime;
+
+    @Override
+    public String toString() {
+        return "BaseDTO{" + "isDelete=" + isDelete + ", createTime=" + createTime + ", updateTime=" + updateTime + '}';
+    }
+}

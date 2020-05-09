@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.StoreMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, register_type, expire_time, try_time, contact_mobile, is_checked, service_phone, address_lat, contact_name, delete_time, is_star, is_try, logo, address_detail, name, uid, contact_qq, address_lng, last_login_time, contact_qrcode, description, collect, hit, goods_count, member_count, order_count, pay_amount, is_boutique, add_time, modify_time, deleted, article_count, support_phone, owner_identity1, owner_identity2
+    </sql>
+
+    <select id="getStoreById" resultType="co.lq.modules.shop.web.vo.StoreQueryVo">
+        select <include refid="Base_Column_List"/> from `store` where id = #{id}
+    </select>
+
+    <select id="getStorePageList" resultType="co.lq.modules.shop.web.vo.StoreQueryVo">
+        select s.*, settle.`status` as verify_status, settle.`closed`
+        from `store` as s
+        left join `store_settle` as settle on settle.`store_id`=s.`id`
+        where s.deleted = 0 and settle.`status`=1 and settle.`closed`=1
+    </select>
+
+    <select id="getShopInfoByUid" resultType="co.lq.modules.shop.web.vo.StoreQueryVo">
+        select <include refid="Base_Column_List"/> from `store` where `uid`=#{param.uid}
+    </select>
+
+    <update id="updateCollectById" parameterType="java.lang.Long">
+        update `store` set `collect`=`collect`+1
+        <where>
+            `id` = #{id}
+        </where>
+    </update>
+
+    <update id="minusCollectById" parameterType="java.lang.Long">
+        update `store` set `collect`=`collect`-1
+        <where>
+            `id` = #{id}
+        </where>
+    </update>
+
+    <select id="getShopList" resultType="co.lq.modules.shop.web.vo.StoreQueryVo">
+        select s.*, settle.`status` as verify_status, settle.`closed`
+        from `store` as s
+        left join `store_settle` as settle on settle.`store_id`=s.`id`
+        where s.deleted = 0 and settle.`status`=1 and settle.`closed`=1
+        limit #{start}, #{limit}
+    </select>
+
+</mapper>

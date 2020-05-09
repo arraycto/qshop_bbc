@@ -1,0 +1,43 @@
+package co.lq.modules.shop.service.dto;
+
+import java.io.Serializable;
+import java.sql.Timestamp;
+
+import lombok.Data;
+
+/**
+ * @author billy
+ * @date 2020-03-27
+ */
+@Data
+public class CmsSubjectCommentDTO implements Serializable {
+
+    private Long      id;
+
+    /** 所属专题 */
+    private Long      subjectId;
+
+    /** 用户名 */
+    private String    memberNickName;
+
+    /** 用户图标 */
+    private String    memberIcon;
+
+    /** 内容 */
+    private String    content;
+
+    /** 创建时间 */
+    private Timestamp createTime;
+
+    /** 状态 */
+    private Integer   showStatus;
+
+    /** 添加时间 */
+    private Timestamp addTime;
+
+    /** 更新时间 */
+    private Timestamp modifyTime;
+
+    /** 逻辑删除 */
+    private Integer   deleted;
+}

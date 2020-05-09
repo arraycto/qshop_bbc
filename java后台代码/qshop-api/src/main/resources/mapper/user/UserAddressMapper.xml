@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.user.mapper.UserAddressMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, real_name, phone, province, city, district, detail, post_code, longitude, latitude, is_default, is_del, add_time
+    </sql>
+
+    <select id="getUserAddressById" resultType="co.lq.modules.user.web.vo.UserAddressQueryVo">
+        select <include refid="Base_Column_List"/> from user_address where id = #{id}
+    </select>
+
+    <select id="getUserAddressPageList" resultType="co.lq.modules.user.web.vo.UserAddressQueryVo">
+        select <include refid="Base_Column_List"/> from user_address where uid=#{param.uid} and is_del=#{param.isDel}
+    </select>
+
+</mapper>

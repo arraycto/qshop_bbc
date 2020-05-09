@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.SystemUserMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, avatar_id, email, enabled, password, username, dept_id, phone, job_id, create_time, last_password_reset_time, nick_name, sex, store_id
+    </sql>
+
+    <select id="getSellerUserById" resultType="co.lq.modules.shop.web.vo.SellerUserQueryVo">
+        select <include refid="Base_Column_List"/> from system_user where id = #{id}
+    </select>
+
+    <select id="getSellerUserPageList" resultType="co.lq.modules.shop.web.vo.SellerUserQueryVo">
+        select <include refid="Base_Column_List"/> from system_user
+    </select>
+
+    <select id="getSellerUserByUsername" resultType="co.lq.modules.shop.web.vo.SellerUserQueryVo">
+        select <include refid="Base_Column_List"/> from system_user
+    </select>
+
+</mapper>

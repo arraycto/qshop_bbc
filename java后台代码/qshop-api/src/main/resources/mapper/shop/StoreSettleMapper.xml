@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.StoreSettleMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, store_id, company_name, license_no, representative, id_no, represent_identity1, represent_identity2, license_start_time, license_end_time, area, address_detail, tel, contact, phone, capital, website_url, add_time, modify_time, deleted, status, closed
+    </sql>
+
+    <select id="getStoreSettleById" resultType="co.lq.modules.shop.web.vo.StoreSettleQueryVo">
+        select <include refid="Base_Column_List"/> from store_settle where id = #{id}
+    </select>
+
+    <select id="getStoreSettlePageList" resultType="co.lq.modules.shop.web.vo.StoreSettleQueryVo">
+        select <include refid="Base_Column_List"/> from store_settle
+    </select>
+
+    <select id="getShopInfoByStoreId" resultType="co.lq.modules.shop.web.vo.StoreSettleQueryVo">
+        select <include refid="Base_Column_List"/> from store_settle where `store_id`=#{param.storeId}
+    </select>
+
+</mapper>

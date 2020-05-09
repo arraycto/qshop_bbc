@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.StoreCatalogRelationMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, catalog_id, store_id, add_time, modify_time, deleted
+    </sql>
+
+    <select id="getStoreCatalogRelationById" resultType="co.lq.modules.shop.web.vo.StoreCatalogRelationQueryVo">
+        select <include refid="Base_Column_List"/> from store_catalog_relation where id = #{id}
+    </select>
+
+    <select id="getStoreCatalogRelationPageList" resultType="co.lq.modules.shop.web.vo.StoreCatalogRelationQueryVo">
+        select <include refid="Base_Column_List"/> from store_catalog_relation
+    </select>
+
+</mapper>

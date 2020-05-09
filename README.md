@@ -10,7 +10,7 @@ QSHOP BBC基于当前流行技术组合的前后端分离商城系统： SpringB
 
 |     |   商家后台系统  |   平台后台系统  |   前端(公众号)  |
 |---  |--- | --- | --- |
-|   |  http://qshop-seller.qshop.vip  |  http://qshop-admin.qshop.vip   |H5:http://qshop-h5.qshop.vip 测试号：leiqu/leiqu123,也可以自行注册 |
+|   |  http://qshop-seller.iyyou.com  |  http://qshop-admin.iyyou.com   |H5:http://qshop-h5.iyyou.com 测试号：leiqu/leiqu123,也可以自行注册 |
 |    |  后台体验账号/密码：admin/123456  |  后台体验账号/密码：admin/123456   |  公众号:![输入图片说明](https://images.gitee.com/uploads/images/2020/0508/151843_6e2a9f7c_7538456.jpeg "qrcode_for_gh_2083a1bd3590_344.jpg")   |
 
 
@@ -82,7 +82,7 @@ QSHOP BBC基于当前流行技术组合的前后端分离商城系统： SpringB
     * 1.14 Lombok
     * 1.15 Hutool
     * 1.16 Mapstruct
-  * 1.17 Redisson
+	* 1.17 Redisson
         
 * 前端使用技术
     * 2.1 Vue 全家桶
@@ -114,10 +114,12 @@ QSHOP BBC基于当前流行技术组合的前后端分离商城系统： SpringB
 - 2.0.3版本，后台图标更新,后台模块重新拆分,物流快递单独管理,导出最新sql
 - 2.0.4版本，新增模板消息通知、H5端商家管理发货修改及其列表时间显示修复
 
-  
+	
 #### 反馈交流
 - QQ交流群：1051036630
 - 喜欢这个商城后台的小伙伴留下你的小星星啦,star,star哦！
+- QQ:![image](https://images.gitee.com/uploads/images/2020/0509/234758_97ccd692_7538456.png)
+- 微信：![image](https://images.gitee.com/uploads/images/2020/0509/234816_1c83fe01_7538456.png)
 
 ####  特别鸣谢
 - eladmin:https://github.com/elunez/eladmin

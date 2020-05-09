@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.manage.mapper.ExpressMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, code, name, sort, is_show
+    </sql>
+
+    <select id="getExpressById" resultType="co.lq.modules.manage.web.vo.ExpressQueryVo">
+        select <include refid="Base_Column_List"/> from express where id = #{id}
+    </select>
+
+    <select id="getExpressPageList" resultType="co.lq.modules.manage.web.vo.ExpressQueryVo">
+        select <include refid="Base_Column_List"/> from express
+    </select>
+
+</mapper>

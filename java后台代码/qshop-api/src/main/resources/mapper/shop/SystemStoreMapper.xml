@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.SystemStoreMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, name, introduction, phone, address, detailed_address, image, latitude, longitude, valid_time, day_time, add_time, is_show, is_del, day_time_end, day_time_start, valid_time_end, valid_time_start, store_id
+    </sql>
+
+    <select id="getSystemStoreById" resultType="co.lq.modules.shop.web.vo.SystemStoreQueryVo">
+        select <include refid="Base_Column_List"/> from system_store where id = #{id}
+    </select>
+
+    <select id="getSystemStorePageList" resultType="co.lq.modules.shop.web.vo.SystemStoreQueryVo">
+        select <include refid="Base_Column_List"/> from system_store
+    </select>
+
+</mapper>

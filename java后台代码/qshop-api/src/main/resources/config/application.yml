@@ -1,0 +1,111 @@
+server:
+  port: 8209
+  servlet:
+    context-path: /api
+  tomcat:
+    uri-encoding: UTF-8
+
+
+spring:
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  freemarker:
+    check-template-location: false
+  profiles:
+    active: dev
+  jackson:
+    time-zone: GMT+8
+  data:
+    redis:
+      repositories:
+        enabled: false
+  #配置 Jpa
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+    open-in-view: true
+
+#配置rocketmq
+rocketmq:
+  nameServer: localhost:9876
+  producer:
+    group: qshop-group
+    sendMessageTimeout: 300000
+
+
+
+#七牛云
+qiniu:
+  # 文件大小 /M
+  max-size: 15
+
+#邮箱验证码有效时间/分钟
+code:
+  expiration: 5
+
+#登录图形验证码有效时间/分钟
+loginCode:
+  expiration: 2
+
+mybatis-plus:
+  check-config-location: true
+  configuration:
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: id_worker
+      logic-delete-value: 0
+      logic-not-delete-value: 1
+  mapper-locations: classpath*:mapper/**/*Mapper.xml
+
+logging:
+  level:
+    org.springframework.web: INFO
+    com.github.binarywang.demo.wx.mp: DEBUG
+    me.chanjar.weixin: DEBUG
+
+
+
+# sm.ms 图床的 token
+smms:
+  token: 1oOP3ykFDI0K6ifmtvU7c8Y1eTWZSlyl
+
+qshop:
+  #通知相关配置
+  notify:
+    # 短消息模版通知配置
+    # 短信息用于通知客户，例如发货短信通知，注意配置格式；template-name，template-templateId 请参考 NotifyType 枚举值
+    sms:
+      enable: false
+      # 如果是腾讯云短信，则设置active的值tencent
+      # 如果是阿里云短信，则设置active的值aliyun
+      active: aliyun
+      sign: 磊趣科技
+      template:
+        - name: paySucceed
+          templateId: SMS_91940112
+        - name: captcha
+          templateId: SMS_91780090
+        - name: ship
+          templateId: SMS_91780090
+        - name: refund
+          templateId: SMS_91780090
+      tencent:
+        appid: 111111111
+        appkey: xxxxxxxxxxxxxx
+      aliyun:
+        regionId: cn-shanghai
+        accessKeyId: mwKYuOkSIPZFnyHH
+        accessKeySecret: wRZ3V2dhol8nfLpSj1tWx9v5ZbqFlq
+
+
+  # 快鸟物流查询配置
+  express:
+    enable: true
+    appId: 1621488
+    appKey: 05507070-2317-4f7c-91fa-4305e482f705
+

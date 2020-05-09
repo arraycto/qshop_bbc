@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.shop.mapper.StoreProductAttrResultMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, product_id, result, change_time
+    </sql>
+
+    <select id="getStoreProductAttrResultById" resultType="co.lq.modules.shop.web.vo.StoreProductAttrResultQueryVo">
+        select <include refid="Base_Column_List"/> from store_product_attr_result where id = #{id}
+    </select>
+
+    <select id="getStoreProductAttrResultPageList" resultType="co.lq.modules.shop.web.vo.StoreProductAttrResultQueryVo">
+        select <include refid="Base_Column_List"/> from store_product_attr_result
+    </select>
+
+</mapper>

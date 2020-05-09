@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="co.lq.modules.user.mapper.UserRechargeMapper">
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, uid, order_id, price, recharge_type, paid, pay_time, add_time, refund_price
+    </sql>
+
+    <select id="getUserRechargeById" resultType="co.lq.modules.user.web.vo.UserRechargeQueryVo">
+        select <include refid="Base_Column_List"/> from user_recharge where id = #{id}
+    </select>
+
+    <select id="getUserRechargePageList" resultType="co.lq.modules.user.web.vo.UserRechargeQueryVo">
+        select <include refid="Base_Column_List"/> from user_recharge
+    </select>
+
+</mapper>
