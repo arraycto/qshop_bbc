@@ -10,7 +10,7 @@ QSHOP BBC基于当前流行技术组合的前后端分离商城系统： SpringB
 
 |     |   商家后台系统  |   平台后台系统  |   前端(公众号)  |
 |---  |--- | --- | --- |
-|   |  http://qshop-seller.iyyou.com  |  http://qshop-admin.iyyou.com   |H5:http://qshop-h5.iyyou.com 测试号：leiqu/leiqu123,也可以自行注册 |
+|   |  http://qshop-seller.qshop.vip  |  http://qshop-admin.qshop.vip   |H5:http://qshop-h5.qshop.vip 测试号：leiqu/leiqu123,也可以自行注册 |
 |    |  后台体验账号/密码：admin/123456  |  后台体验账号/密码：admin/123456   |  公众号:![输入图片说明](https://images.gitee.com/uploads/images/2020/0508/151843_6e2a9f7c_7538456.jpeg "qrcode_for_gh_2083a1bd3590_344.jpg")   |
 
 
