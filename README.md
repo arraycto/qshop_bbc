@@ -10,7 +10,7 @@ QSHOP BBC基于当前流行技术组合的前后端分离商城系统： SpringB
 
 |     |   商家后台系统  |   平台后台系统  |   前端(公众号)  |
 |---  |--- | --- | --- |
-|   |  http://qshop-seller.iyyou.com  |  http://qshop-admin.iyyou.com   |H5:http://qshop-h5.iyyou.com 测试号：leiqu/leiqu123,也可以自行注册 |
+|   |  http://http://114.55.250.4:9093  |  http://114.55.250.4:9092   |H5:http://114.55.250.4:9091 测试号：leiqu/leiqu123,也可以自行注册 |
 |    |  后台体验账号/密码：admin/123456  |  后台体验账号/密码：admin/123456   |  公众号:   |
 
 
