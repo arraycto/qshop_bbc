@@ -3,21 +3,29 @@
 #### 项目简介
 QSHOP-B2C基于当前流行技术组合的前后端分离商城系统： SpringBoot2+Jpa+MybatisPlus+SpringSecurity+jwt+redis+Vue的前后端分离的商城系统， 包含商城、拼团、砍价、商户管理、 秒杀、优惠券、积分、分销、会员等功能，更适合企业或个人二次开发；；
 
-**开发文档**  【[查看文档]( https://code.aliyun.com/lq_b2c/node_frontend_h5/wikis/develop_wikis )】 
+**开发文档**  【[查看文档]( https://www.qshop.vip )】 
 
 #### 体验地址
 
-|     |   后台系统  |   前端(公众号)  |
-|---  |--- | --- |
-|   |  http://b2c-java-admin.leiqukeji.com  |H5:https://h5-b2c-java.leiqukeji.com 测试号：admin/123456,也可以自行注册 |
-|    |  后台体验账号/密码：admin/123456   |  公众号:![输入图片说明](https://reslqmall.iyyou.com/wiki/wechat/qrcode_for_gh_2083a1bd3590_344.jpg "qrcode_for_gh_2083a1bd3590_344.jpg")   |
+|     |   商家后台系统  |   平台后台系统  |   前端(公众号)  |
+|---  |--- | --- | --- |
+|   |  http://114.55.250.4:9093  |  http://114.55.250.4:9092   |H5:http://114.55.250.4:9091 可以自行注册 |
+|    |  后台体验账号/密码：admin/123456  |  后台体验账号/密码：admin/123456   |  公众号:   |
 
 
 #### 项目源码
 
-|     |  后台系统源码 |   后台系统前端源码  |
+|     |  商家后台系统源码 |   商家后台系统前端源码  |
 |---  |--- | --- |
-|   阿里云  |  https://code.aliyun.com/lq_b2c/java_backend.git  | https://code.aliyun.com/lq_b2c/node_backend.git |
+|   阿里云  |  待更新  | 待更新 |
+
+|     |  平台后台系统源码 |   平台后台系统前端源码  |
+|---  |--- | --- |
+|   阿里云  |  待更新  | 待更新 |
+
+|     |  前台系统源码  |   其他源码  | 
+|---  |--- | --- |
+|   阿里云  |  待更新  |  待更新  |
 
 ## 商城功能
 
@@ -48,16 +56,16 @@ QSHOP-B2C基于当前流行技术组合的前后端分离商城系统： SpringB
 #### 系统预览
 <table>
     <tr>
-        <td><img src="https://images.gitee.com/uploads/images/2019/1211/161553_20c039ff_477893.jpeg"/></td>
-        <td><img src="https://images.gitee.com/uploads/images/2019/1129/234538_62ba99b7_477893.jpeg"/></td>
+        <td><img src="https://images.gitee.com/uploads/images/2020/0508/150409_b7cdbe83_7538456.png"/></td>
+        <td><img src="https://images.gitee.com/uploads/images/2020/0508/150139_0d7a3518_7538456.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://images.gitee.com/uploads/images/2019/1129/234601_7fb028a6_477893.jpeg"/></td>
-        <td><img src="https://images.gitee.com/uploads/images/2019/1129/234622_6f593729_477893.jpeg"/></td>
+        <td><img src="https://images.gitee.com/uploads/images/2020/0508/150213_cf2b3a90_7538456.png"/></td>
+        <td><img src="https://images.gitee.com/uploads/images/2020/0508/150345_600bff1e_7538456.png"/></td>
     </tr>
     <tr>
-        <td><img src="https://images.gitee.com/uploads/images/2019/1130/114845_9ed3c82c_477893.jpeg"/></td>
-        <td><img src="https://images.gitee.com/uploads/images/2019/1129/234703_49e8fe4f_477893.jpeg"/></td>
+        <td><img src="https://images.gitee.com/uploads/images/2020/0508/150409_b7cdbe83_7538456.png"/></td>
+        <td><img src="https://images.gitee.com/uploads/images/2020/0508/150436_6df7bbe6_7538456.png"/></td>
     </tr>
 </table>
 
